@@ -16,9 +16,9 @@ jobs:
            
            if [ $TIEMPO -gt 0 ]; then
               echo "${{vars.NOMBRE}} ${{vars.APELLIDO}} cumplio la mayoria de edad hace $TIEMPO años"
-              exit 1
+              
             else  
               echo "${{vars.NOMBRE}} ${{vars.APELLIDO}} aun no cumple la mayoria de edad"
-              exit 1            
+              
             fi
            
