@@ -9,6 +9,18 @@ jobs:
     environment: ${{github.ref_name == 'develop' && 'dev'  || github.ref_name == 'release' && 'qa' || github.ref_name == 'main' && 'prod'}}
     steps:  # BEGIN:
       - name: t1action-tarea
-        id: t1action-tarea    
+        id: t1action-tarea
+        env:
+          MAYORIA_EDAD: 18            
         run: |
-           echo "${{vars.NOMBRE}} ${{vars.APELLIDO}} cumplio la mayoria de edad hace [tiempo] años""
+           EDAD_ACTUAL=${{vars.EDAD}}
+           TIEMPO=$((EDAD_ACTUAL - MAYORIA_EDAD))
+           
+           if [ $TIEMPO -gt 0 ]; then
+              echo "${{vars.NOMBRE}} ${{vars.APELLIDO}} cumplio la mayoria de edad hace $TIEMPO años"
+              exit 1
+            else  
+              echo "${{vars.NOMBRE}} ${{vars.APELLIDO}} aun no cumple la mayoria de edad"
+              exit 1            
+            fi
+           
