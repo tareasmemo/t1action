@@ -1,0 +1,12 @@
+name: workflowt1action
+on:
+  workflow_dispatch:
+jobs:
+  t1workflow:  # Repo t1workflow - privado'
+    runs-on: ubuntu-latest
+    environment: ${{github.ref_name == 'develop' && 'dev'  || github.ref_name == 'release' && 'qa' || github.ref_name == 'main' && 'prod'}}
+    steps:  # BEGIN:
+      - name: t1action-tarea
+        id: t1action-tarea    
+        run: |
+         echo "${{vars.DEV_VARIABLE1}} ${{secrets.SECRETO1}} cumplio la mayoria de edad hace [tiempo] años"
