@@ -1,5 +1,7 @@
 name: workflowt1action
 on:
+  push:
+    branches: ["main"]
   workflow_dispatch:
 jobs:
   t1workflow:  # Repo t1workflow - privado'
@@ -9,6 +11,4 @@ jobs:
       - name: t1action-tarea
         id: t1action-tarea    
         run: |
-         
-
-         
+           echo "${{vars.NOMBRE}} ${{vars.APELLIDO}} cumplio la mayoria de edad hace [tiempo] años""
