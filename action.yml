@@ -1,0 +1,16 @@
+name: "t1action-tarea"
+description: "A GitHub Action to run Tarea tasks"
+inputs:
+  nombre:
+    description: "El nombre de la tarea a ejecutar"
+    required: true
+  apellido:
+    description: "El apellido de la tarea a ejecutar"
+    required: true 
+  edad:
+    description: "la edad de la tarea a ejecutar"
+    required: true                
+runs:    
+  using: "node20"
+  main: "dist/index.js"
+  
