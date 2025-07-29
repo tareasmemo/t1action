@@ -5,7 +5,9 @@ try {
     const apellido = core.getInput('apellido');
     const edad = parseInt(core.getInput('edad'));
     const MAYORIA_EDAD = 18;
-  
+    console.log(`Nombre: ${nombre}`);
+    console.log(`Apellido: ${apellido}`);
+    console.log(`Edad: ${edad}`);
     const tiempo = edad - MAYORIA_EDAD;
   
     if (tiempo > 0) {
