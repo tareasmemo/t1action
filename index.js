@@ -9,7 +9,7 @@ try {
     const tiempo = edad - MAYORIA_EDAD;
   
     if (tiempo > 0) {
-      console.log(`${nombre} ${apellido} cumplió la mayoría de edad hace ${tiempo} años`);
+      console.log(`${nombre} ${apellido} cumplió la mayoría de edad hace ${tiempo} años.`);
     } else {
       console.log(`${nombre} ${apellido} aún no cumple la mayoría de edad`);
     }
